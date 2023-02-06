@@ -6,13 +6,18 @@
 # 6
 # -> 5
 
-l = input()
-numbers = list(map(int, input().strip().split()))
-x = int(input().strip())
-
-res = numbers[0]
-for i in numbers:
-    if abs(i - x) < abs(res - x):
-        res = i
-
-print(res)
+n = int(input('Введите кол-во элементов в массиве: '))
+mas = []
+i = 1
+while i <= n:
+    mas.append(i)
+    i+= 1
+x = int(input("Введите искомое число: "))
+res = 0
+dif = 999999
+for el in mas:
+    if x - el < dif and x - el >= 0:
+        res = el
+        dif = x - el
+print('В заданом массиве:',mas,'ближайшее число, к числу',x,"являеться",res)     
+        

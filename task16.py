@@ -6,9 +6,14 @@
 # 3 
 # -> 1
 
-n = int(input())
-a = map(int, input().split())
-x = int(input())
-print(sum(map(lambda z: int(z == x), a)))
+n = int(input('Введите кол-во элементов в массиве: '))
+mas = []
+i = 1
+while i <= n:
+    mas.append(i)
+    i+= 1
+x = int(input("Введите искомое число: "))
+res = mas.count(x)
+print('В заданом массиве:',mas,'число',x,"встречаеться",res,'раз')
 
 
