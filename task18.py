@@ -6,18 +6,27 @@
 # 6
 # -> 5
 
-n = int(input('Введите кол-во элементов в массиве: '))
-mas = []
-i = 1
-while i <= n:
-    mas.append(i)
-    i+= 1
-x = int(input("Введите искомое число: "))
-res = 0
-dif = 999999
-for el in mas:
-    if x - el < dif and x - el >= 0:
-        res = el
-        dif = x - el
-print('В заданом массиве:',mas,'ближайшее число, к числу',x,"являеться",res)     
+# n = int(input('Введите кол-во элементов в массиве: '))
+# mas = []
+# i = 1
+# while i <= n:
+#     mas.append(i)
+#     i+= 1
+# x = int(input("Введите искомое число: "))
+# res = 0
+# dif = 999999
+# for el in mas:
+#     if x - el < dif and x - el >= 0:
+#         res = el
+#         dif = x - el
+# print('В заданом массиве:',mas,'ближайшее число, к числу',x,"являеться",res)     
+        
+items = [1,2,3,4,5] # список чисел
+value = 4.2         # число к которому найти ближайшее
+ 
+def nearest_value(items, value):
+    abs_list = list(map(lambda item: abs(item - value), items)) # создаем список значений разницы item - value по модулю 
+    return items[abs_list.index(min(abs_list))]                 # находим индекс минимальной разницы и по этому индексу возвращаем элемент из items
+ 
+print(nearest_value(items, value))        
         
